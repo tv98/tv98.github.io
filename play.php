@@ -5,12 +5,12 @@
 </head>
 <body>
 <div id="a1"></div>
-<script type="text/javascript" src="ck/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript" src="../ck/ckplayer.js" charset="utf-8"></script>
 <script type="text/javascript">
     var flashvars={
 <?php 
 if(preg_match("/m3u8/",$_SERVER["QUERY_STRING"])||preg_match("/zip/",$_GET['url'])){
-echo "        f: 'ck/m3u8.swf',
+echo "        f: '/ck/m3u8.swf',
         a: '".$_GET['url']."',
         c:0,
         s:4,
@@ -33,7 +33,7 @@ echo "        f:'".$_GET['url']."',
     if (isiPad) {
         document.getElementById('a1').innerHTML = '<video src="<?php echo $_GET['url'];  ?>" controls="controls" autoplay="autoplay" width="100%" height="100%"></video>'
         }else{
-        CKobject.embedSWF('ck/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params);
+        CKobject.embedSWF('../ck/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params);
         }
   </script>
 <script language="JavaScript"> 
