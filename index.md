@@ -63,4 +63,3 @@
     <div id="_timer">正在获取服务器时间……</div>
 </body>
 </html>
-
