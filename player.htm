@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="GBK">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="referrer" content="never">
+<title>mp4播放器</title>
+<link rel="stylesheet" href="js/DPlayer.min.css">
+<style type="text/css">
+body, html, .dplayer {
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			background-color:#000;
+		}
+a {
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div id="player" class="dplayer"></div>
+<script type="text/javascript" src="js/hls.min.js"></script>
+<script type="text/javascript" src="js/DPlayer.min.js" charset="utf-8"></script>
+<script src="js/flv.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+function QueryString(){
+var name,value,i;
+var str=location.href;
+var num=str.indexOf("?")
+str=str.substr(num+1);
+var arrtmp=str.split("&");
+for(i=0;i < arrtmp.length;i++){
+num=arrtmp[i].indexOf("=");
+	if(num>0){
+		name=arrtmp[i].substring(0,num);
+		value=arrtmp[i].substr(num+1);
+		this[name]=value;
+	}
+}
+}
+var Request=new QueryString();
+url=Request["url"];
+  var isiPad = navigator.userAgent.match(/iPad|iPhone|Android|Linux|iPod/i) != null;
+  if(isiPad){
+	document.getElementById('player').innerHTML = '<video src="'+ url +'" controls="controls" poster="loading.gif" width="100%" height="100%" x-webkit-airplay="allow"></video>';
+      }else {
+		var pic = "";
+		var dplayer = new DPlayer({
+			element: document.getElementById("player"),
+			autoplay: true,
+			video: {
+				url:''+ url +'',
+                pic: pic
+			       }
+		});
+       }
+</script>
+</body>
+</html>
