@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http:www.w3.org/1999/xhtml">
+<head>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>²¥·ÅÆ÷</title>
+<style type="text/css">body,html,div{background-color:black;padding: 0;margin: 0;width:100%;height:100%;}</style>
+</head>
+<body>
+<div id="a1"></div>
+<script type="text/javascript" src="/ck/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript"> 
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+}
+    var url = GetQueryString("url");
+	var flashvars={
+	f:encodeURIComponent(url),
+        c:0,
+        p:1,
+        v:100,
+        h:3
+    };
+
+	    var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+    CKobject.embedSWF('/ck/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params);
+    
+	var isiPad = navigator.userAgent.match(/iPad|iPhone|Linux|Android|iPod/i) != null;
+		if (isiPad) {
+			var html = '<video src="'+url+'" controls="controls" autoplay="autoplay" width="100%" height="100%"></video>';
+			document.getElementById('a1').innerHTML = html;
+		}
+function playerstop(){
+window.parent.frames.MacPlayer.GoNextUrl();
+return false;
+};
+</script>
+</div>
+</body>
+</html>
