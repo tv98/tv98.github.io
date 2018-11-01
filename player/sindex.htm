@@ -1,15 +1,16 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head>
-    <title>播放器</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-        html, body { height:100%; }
-        body { margin:0; }
-    </style>
 
+	<head>
+		<meta charset="UTF-8">
+		<title>chplayer播放</title>
+		<meta name="keywords" content="flv,mp4,rtmp,html5,m3u8,播放器,视频流,网页视频播放器,dkvplayer,chplayer官网" />
+		<meta name="description" content="chplayer支持的视频格式：http协议的flv,mp4,m3u8及rtmp协议 " />
+		<meta name="author" content="chplayer" />
+		<meta name="copyright" content="http://www.chplayer.com" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<script type="text/javascript" src="chplayer.js"></script>
+		 <style> html, body { height:100%; }body { margin:0; }</style>
+
 	</head>
 
 	<body>
@@ -22,7 +23,7 @@
 				if(r != null) return unescape(r[2]);
 				return null; //返回参数值
 			}
-			var videoUrl =getUrlParam('url');
+			var videoUrl =getUrlParam('videourl');
 			var hls=getUrlParam('hls');
 			var videoObject = {
 				container: 'video',
